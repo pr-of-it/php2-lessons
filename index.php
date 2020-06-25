@@ -8,9 +8,11 @@ use Models\Service;
 
 require __DIR__ . '/autoload.php';
 
-$product = new Product();
-$product->title = 'Тестовый товар';
-$product->price = 42000;
-$product->insert();
+$view = new View();
 
-var_dump($product);
+$view->products = Product::findAll();
+$view->services = Product::findAll();
+
+echo count($view);die;
+
+$view->display(__DIR__ . '/Templates/index.php');

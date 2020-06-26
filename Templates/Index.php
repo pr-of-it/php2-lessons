@@ -20,7 +20,11 @@
         <?php foreach ($this->products as $product) : ?>
         <tr>
             <td><?php echo $product->id; ?></td>
-            <td><?php echo $product->title; ?></td>
+            <td>
+                <a href="/index.php?ctrl=Product&id=<?php echo $product->id; ?>">
+                    <?php echo $product->title; ?>
+                </a>
+            </td>
             <td><?php echo sprintf('%0.2f', $product->price); ?></td>
         </tr>
         <?php endforeach; ?>
@@ -36,7 +40,11 @@
         <?php foreach ($this->services as $service) : ?>
             <tr>
                 <td><?php echo $service->id; ?></td>
-                <td><?php echo $service->title; ?></td>
+                <td>
+                    <a href="/index.php?ctrl=Service&id=<?php echo $service->id; ?>">
+                        <?php echo $service->title; ?>
+                    </a>
+                </td>
                 <td><?php echo sprintf('%0.2f', $service->price); ?></td>
             </tr>
         <?php endforeach; ?>

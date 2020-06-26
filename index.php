@@ -1,18 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
-use Models\HasPriceInterface;
-use Models\Product;
-use Models\Service;
-
 require __DIR__ . '/autoload.php';
 
-$view = new View();
+$ctrl = $_GET['ctrl'] ?? 'Index';
+$class = '\\Controllers\\' . $ctrl;
 
-$view->products = Product::findAll();
-$view->services = Product::findAll();
-
-echo count($view);die;
-
-$view->display(__DIR__ . '/Templates/index.php');
+if (class_exists($class)) {
+    $ctrl = new $class;
+    $ctrl();
+} else {
+    die('Неизвестная страница');
+}

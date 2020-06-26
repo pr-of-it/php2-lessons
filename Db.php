@@ -20,17 +20,17 @@ class Db
         $this->dbh = new \PDO('pgsql:host=localhost;dbname=profit', 'profit', 'profit');
     }
 
-    public function query($sql, $class): array
+    public function query($sql, $class, $params = []): array
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->execute();
+        $sth->execute($params);
         return $sth->fetchAll(PDO::FETCH_CLASS, $class);
     }
 
-    public function execute($sql, $data): bool
+    public function execute($sql, $params): bool
     {
         $sth = $this->dbh->prepare($sql);
-        return $sth->execute($data);
+        return $sth->execute($params);
     }
 
     public function lastId()

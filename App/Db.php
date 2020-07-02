@@ -1,6 +1,9 @@
 <?php
 
+namespace App;
+
 use Exceptions\Http500Exception;
+use PDO;
 
 class Db
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
 use Exceptions\Http404Exception;
-use Models\Product as Model;
+use App\Models\Product as Model;
 
 class Product
 {

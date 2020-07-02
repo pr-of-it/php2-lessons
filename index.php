@@ -3,7 +3,7 @@
 require __DIR__ . '/autoload.php';
 
 $ctrl = $_GET['ctrl'] ?? 'Index';
-$class = '\\Controllers\\' . $ctrl;
+$class = '\\App\Controllers\\' . $ctrl;
 
 if (!class_exists($class)) {
     die('Неизвестная страница');

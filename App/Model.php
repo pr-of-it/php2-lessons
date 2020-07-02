@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use App\Db;
+
 abstract class Model
 {
 

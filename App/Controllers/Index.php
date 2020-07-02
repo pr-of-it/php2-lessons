@@ -1,9 +1,9 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use Models\Product;
-use Models\Service;
+use App\Models\Product;
+use App\Models\Service;
 
 class Index
 {
